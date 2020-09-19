@@ -19,35 +19,35 @@ def create_question(question_text, days):
 
 class QuestionModelTests(TestCase):
 
-    # def test_is_published_with_old_question(self):
-    #     time = timezone.now() - datetime.timedelta(days=1, seconds=1)
-    #     old_question = Question(pub_date=time)
-    #     self.assertTrue(old_question.is_published())
-    #
-    # def test_is_published_with_recent_question(self):
-    #     time = timezone.now() - datetime.timedelta(days=1, seconds=1)
-    #     recent_question = Question(pub_date=time)
-    #     self.assertTrue(recent_question.is_published())
-    #
-    # def test_is_published_with_future_question(self):
-    #     time = timezone.now() + datetime.timedelta(days=30)
-    #     future_question = Question(pub_date=time)
-    #     self.assertFalse(future_question.is_published())
-    #
-    # def test_can_vote_with_old_question(self):
-    #     time = timezone.now() - datetime.timedelta(days=1, seconds=1)
-    #     old_question = Question(pub_date=time)
-    #     self.assertTrue(old_question.can_vote())
-    #
-    # def test_can_vote_with_recent_question(self):
-    #     time = timezone.now() - datetime.timedelta(days=1, seconds=1)
-    #     recent_question = Question(pub_date=time)
-    #     self.assertTrue(recent_question.can_vote())
-    #
-    # def test_is_published_with_future_question(self):
-    #     time = timezone.now() + datetime.timedelta(days=30)
-    #     future_question = Question(pub_date=time)
-    #     self.assertTrue(future_question.can_vote())
+    def test_is_published_with_old_question(self):
+        time = timezone.now() - datetime.timedelta(days=1, seconds=1)
+        old_question = Question(pub_date=time)
+        self.assertTrue(old_question.is_published())
+
+    def test_is_published_with_recent_question(self):
+        time = timezone.now() - datetime.timedelta(days=1, seconds=1)
+        recent_question = Question(pub_date=time)
+        self.assertTrue(recent_question.is_published())
+
+    def test_is_published_with_future_question(self):
+        time = timezone.now() + datetime.timedelta(days=30)
+        future_question = Question(pub_date=time)
+        self.assertFalse(future_question.is_published())
+
+    def test_can_vote_with_old_question(self):
+        time = timezone.now() - datetime.timedelta(days=1, seconds=1)
+        old_question = Question(pub_date=time)
+        self.assertTrue(old_question.can_vote())
+
+    def test_can_vote_with_recent_question(self):
+        time = timezone.now() - datetime.timedelta(days=1, seconds=1)
+        recent_question = Question(pub_date=time)
+        self.assertTrue(recent_question.can_vote())
+
+    def test_is_published_with_future_question(self):
+        time = timezone.now() + datetime.timedelta(days=30)
+        future_question = Question(pub_date=time)
+        self.assertTrue(future_question.can_vote())
 
     def test_was_published_recently_with_future_question(self):
         time = timezone.now() + datetime.timedelta(days=30)
