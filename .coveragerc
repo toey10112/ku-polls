@@ -1,0 +1,12 @@
+
+[run]
+
+branch = True
+
+cover_pylib = False
+
+omit =
+    manage.py
+    mysite/*
+    polls/migrations/*
+    polls/__init__.py
