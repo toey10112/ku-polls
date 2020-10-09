@@ -26,11 +26,7 @@ class Question(models.Model):
 
     def can_vote(self):
         """Check question that can vote or not."""
-        now = timezone.now()
-        if self.pub_date <= now <= self.end_date:
-            return True
-        else:
-            return False
+        return self.pub_date <= timezone.now() <= self.end_date
 
     def was_published_recently(self):
         """Check question that published recently."""
