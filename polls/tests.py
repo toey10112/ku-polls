@@ -19,7 +19,8 @@ def create_question(question_text, days, end_date):
     time = timezone.now() + datetime.timedelta(days=days)
     time2 = timezone.now() + datetime.timedelta(days=end_date)
 
-    return Question.objects.create(question_text=question_text, pub_date=time, end_date=time2)
+    return Question.objects.create(question_text=question_text,
+                                   pub_date=time, end_date=time2)
 
 
 class QuestionModelTests(TestCase):
@@ -127,8 +128,9 @@ class QuestionIndexViewTests(TestCase):
         )
 
     def test_two_past_questions(self):
-        """Test two past question can work."""
-        create_question(question_text="Past question 1.", days=-30, end_date=-15)
+        """Test two_past_question can work."""
+        create_question(question_text="Past question 1.",
+                        days=-30, end_date=-15)
         create_question(question_text="Past question 2.", days=-5, end_date=-1)
         response = self.client.get(reverse('polls:index'))
         self.assertQuerysetEqual(
