@@ -14,3 +14,6 @@ Webs application for the KU community who want to conduct surveys and polls open
 
 **Iteration 2**
 - [Iteration 2](https://github.com/toey10112/ku-polls/wiki/Iteration-2-Plan)
+
+**Iteration 3**
+- [Iteration 3](https://github.com/toey10112/ku-polls/wiki/Iteration-3-Plan)
