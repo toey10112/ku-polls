@@ -18,10 +18,11 @@ table, th, td {
         <th>Results</th>
   </tr>
     {% for choice in question.choice_set.all %}
+
     <tr>
 
         <td>{{ choice.choice_text }}</td>
-        <td>{{ choice.votes }} vote{{ choice.votes|pluralize }}</td>
+        <td>{{ choice.votes }} vote{{ vote }}</td>
 
     </tr>
     {% endfor %}
